@@ -48,22 +48,27 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-}
 
+    afterEvaluate {
+        publishing {
+            publications {
+                register<MavenPublication>("release") {
+                    groupId = "work.delsart.bottomSheet"
+                    artifactId = "bottomSheet"
+                    version = "v0.0.1"
+                    afterEvaluate {
+                        from(components["release"])
+                    }
+                }
 
-publishing {
-    publications {
-        register<MavenPublication>("release") {
-            groupId = "work.delsart.bottomSheet"
-            artifactId = "bottomSheet"
-            version = "v0.0.1"
-            afterEvaluate {
-                from(components["release"])
             }
         }
-
     }
+
+
 }
+
+
 
 
 dependencies {
