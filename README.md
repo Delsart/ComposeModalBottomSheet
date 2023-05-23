@@ -2,7 +2,7 @@
 
 ModalBottomSheet for Compose
 
-## BaseUsage
+## Base Usage
 
 ``` kotlin
 BottomSheet(sheetContent = {/*TODO sheet content here */ }) {
@@ -18,3 +18,24 @@ BottomSheet(sheetContent = {/*TODO sheet content here */ }) {
     }
 }
 ```
+
+## Import
+
+Step 1. Add it in your root build.gradle at the end of repositories:
+
+``` groovy
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+
+Step 2. Add the dependency
+
+``` groovy
+	dependencies {
+		implementation 'com.github.User:Repo:Tag'
+	}
+``` 
