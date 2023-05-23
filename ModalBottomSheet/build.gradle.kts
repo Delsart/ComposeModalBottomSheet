@@ -1,7 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    `maven-publish`
+    id("maven-publish")
 }
 
 android {
@@ -11,22 +11,11 @@ android {
     defaultConfig {
         minSdk = 26
         aarMetadata {
-            minCompileSdk = 29
+            minCompileSdk = 33
         }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
-
-
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-        }
-
-
-    }
-
-
 
 
     buildTypes {
@@ -54,20 +43,20 @@ android {
 }
 
 
-afterEvaluate {
-    publishing {
-        publications {
-            register<MavenPublication>("release") {
-                groupId = "work.delsart.bottomsheet"
-                artifactId = "bottomsheet"
-                version = "0.0.1"
-                afterEvaluate {
-                    from(components["release"])
-                }
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "work.delsart.bottomSheet"
+            artifactId = "bottomSheet"
+            version = "v0.0.1"
+            afterEvaluate {
+                from(components["release"])
             }
         }
+
     }
 }
+
 
 dependencies {
     implementation("androidx.compose.animation:animation-core")
