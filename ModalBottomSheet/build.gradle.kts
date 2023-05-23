@@ -20,6 +20,11 @@ android {
         consumerProguardFiles("consumer-rules.pro")
     }
 
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
 
     buildTypes {
         release {
@@ -48,7 +53,7 @@ android {
 
 publishing {
     publications {
-        create<MavenPublication>("release") {
+        register<MavenPublication>("release") {
             groupId = "work.delsart.bottomSheet"
             artifactId = "bottomSheet"
             version = "v0.0.1"
