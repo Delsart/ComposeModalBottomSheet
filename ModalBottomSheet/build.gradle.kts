@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    `maven-publish`
 }
 
 android {
@@ -9,10 +10,24 @@ android {
 
     defaultConfig {
         minSdk = 26
-
+        aarMetadata {
+            minCompileSdk = 29
+        }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
+
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+
+
+    }
+
+
+
 
     buildTypes {
         release {
@@ -35,6 +50,22 @@ android {
     }
     kotlinOptions {
         jvmTarget = "17"
+    }
+}
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                groupId = "work.delsart.bottomsheet"
+                artifactId = "bottomsheet"
+                version = "1.0"
+                afterEvaluate {
+                    from(components["release"])
+                }
+            }
+        }
     }
 }
 
