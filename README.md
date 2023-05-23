@@ -1,4 +1,5 @@
 # ComposeModalBottomSheet
+[![](https://jitpack.io/v/Delsart/ComposeModalBottomSheet.svg)](https://jitpack.io/#Delsart/ComposeModalBottomSheet)
 
 ModalBottomSheet for Compose
 
