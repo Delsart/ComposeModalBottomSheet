@@ -4,7 +4,7 @@ ModalBottomSheet for Compose
 
 ## BaseUsage
 
-''' kotlin
+``` kotlin
 BottomSheet(sheetContent = {/*TODO sheet content here */ }) {
 val bottomSheetState = LocalBottomSheetState.current
 val coroutineScope = rememberCoroutineScope()
@@ -17,4 +17,4 @@ bottomSheetState.show()
 Text(text = "show")
 }
 }
-'''
+```
