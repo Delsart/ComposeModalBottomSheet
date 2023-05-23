@@ -8,6 +8,9 @@ android {
     namespace = "work.delsart.modalbottomsheet"
     compileSdk = 33
 
+    testFixtures {
+        enable = true
+    }
     defaultConfig {
         minSdk = 26
         aarMetadata {
@@ -45,7 +48,7 @@ android {
 
 publishing {
     publications {
-        register<MavenPublication>("release") {
+        create<MavenPublication>("release") {
             groupId = "work.delsart.bottomSheet"
             artifactId = "bottomSheet"
             version = "v0.0.1"
