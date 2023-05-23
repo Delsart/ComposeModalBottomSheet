@@ -60,7 +60,7 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "work.delsart.bottomsheet"
                 artifactId = "bottomsheet"
-                version = "1.0"
+                version = "0.0.1"
                 afterEvaluate {
                     from(components["release"])
                 }
