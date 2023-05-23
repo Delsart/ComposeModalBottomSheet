@@ -2,6 +2,8 @@
 
 ModalBottomSheet for Compose
 
+https://github.com/Delsart/ComposeModalBottomSheet/assets/25666144/ff9ceef8-b30d-43fb-9d68-aa876b6ff383
+
 ## Base Usage
 
 ``` kotlin
