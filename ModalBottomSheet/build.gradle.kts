@@ -49,26 +49,24 @@ android {
         jvmTarget = "17"
     }
 
-    afterEvaluate {
-        publishing {
-            publications {
-                register<MavenPublication>("release") {
-                    groupId = "work.delsart.bottomSheet"
-                    artifactId = "bottomSheet"
-                    version = "v0.0.1"
-                    afterEvaluate {
-                        from(components["release"])
-                    }
-                }
-
-            }
-        }
-    }
-
 
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            create("maven_public", MavenPublication::class.java) {
+                groupId = "work.delsart.bottomSheet"
+                artifactId = "bottomSheet"
+                version = "v0.0.1"
+                afterEvaluate {
+                    from(components["release"])
+                }
+            }
 
+        }
+    }
+}
 
 
 dependencies {
