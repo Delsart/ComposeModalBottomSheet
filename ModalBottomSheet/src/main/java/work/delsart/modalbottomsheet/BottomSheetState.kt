@@ -292,7 +292,7 @@ class BottomSheetState(
     }
 
 
-    suspend fun animateTo(targetValue: BottomSheetValue) {
+    private suspend fun animateTo(targetValue: BottomSheetValue) {
         try {
             animateInternal(targetValue)
         } finally {
